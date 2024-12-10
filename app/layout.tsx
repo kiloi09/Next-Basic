@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inconsolata, Roboto } from 'next/font/google'
 import type { Metadata } from "next";
-import Navbar from "../componenets/Navbar";
+import Navbar from "../components/Navbar";
 
 // const inconsolata = Inconsolata({subsets:['latin']})
 const roboto = Inconsolata({subsets:['latin'], weight: ['400']})
