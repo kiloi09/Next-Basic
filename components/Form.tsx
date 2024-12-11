@@ -1,11 +1,15 @@
+'use client'
+import { useFormStatus, useFormState } from 'react-dom';
+import { createUser } from "@/utils/action";
 
-const createUser = async () => {
-    'use server'
-    console.log('creating user...');
-    
-
-}
-
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
+  return (
+    <button type='submit' className={btnStyle} disabled={pending}>
+      {pending ? 'submitting...' : 'submit'}
+    </button>
+  );
+};
 
 
 const Form = () => {
@@ -14,7 +18,7 @@ const Form = () => {
         <h2 className="text-2xl capitalize mb-4">create user</h2>
         <input type="text" name="firstName" defaultValue='peter' required className={inputStyle}/>
         <input type="text" name="lastName" defaultValue='smith' required className={inputStyle}/>
-        <button type="submit" className={btnStyle}>submit</button>
+        <SubmitButton/>
     </form>
   )
 }
